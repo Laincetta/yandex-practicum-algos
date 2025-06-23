@@ -17,10 +17,7 @@
 """
 
 
-from typing import List
-
-
-def get_chaos(weather_report: List[int]) -> int:
+def get_chaos(weather_report: list[int]) -> int:
     n = len(weather_report)
     if n == 1:
         return 1
@@ -39,6 +36,7 @@ def get_chaos(weather_report: List[int]) -> int:
     return chaos
 
 
-input()
-weather_report = list(map(int, input().split()))
-print(get_chaos(weather_report))
+if __name__ == "__main__":
+    input()
+    weather_report = list(map(int, input().split()))
+    print(get_chaos(weather_report))
