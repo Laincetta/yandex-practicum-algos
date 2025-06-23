@@ -10,10 +10,8 @@
 Напечатайте нужные числа в возрастающем порядке через пробел.
 """
 
-from typing import List
 
-
-def get_neighbours(matrix: List[List[int]], y: int, x: int) -> list[int]:
+def get_neighbours(matrix: list[list[int]], y: int, x: int) -> list[int]:
     neighbours = []
     height = len(matrix)
     width = len(matrix[0])
