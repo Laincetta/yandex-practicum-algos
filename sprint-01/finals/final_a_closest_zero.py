@@ -16,12 +16,10 @@
 Формат вывода
 Для каждого из участков выведите расстояние до ближайшего нуля. Числа выводите в одну строку, разделяя их пробелами.
 """
-
-from typing import List
 from math import ceil, floor
 
 
-def get_distances(plots: List[int], n: int) -> List[int]:
+def get_distances(plots: list[int], n: int) -> list[int]:
     if n == 1:
         return [0]
 
@@ -86,8 +84,9 @@ def get_distances(plots: List[int], n: int) -> List[int]:
     return distances
 
 
-n = int(input())
-plots = list(map(int, input().split()))
-distances = get_distances(plots, n)
+if __name__ == "__main__":
+    n = int(input())
+    plots = list(map(int, input().split()))
+    distances = get_distances(plots, n)
 
-print(*distances)
+    print(*distances)
