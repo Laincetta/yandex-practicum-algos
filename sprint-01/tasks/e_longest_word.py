@@ -16,6 +16,8 @@
 В первой строке выведите самое длинное слово. Во второй строке выведите его длину. Если подходящих слов несколько,
 выведите то, которое встречается раньше.
 """
+
+
 def get_longest_word(string: str) -> str:
     words = string.split()
     longest_word = words[0]
@@ -27,9 +29,10 @@ def get_longest_word(string: str) -> str:
     return longest_word
 
 
-input()
-string = input()
-longest_word = get_longest_word(string)
-max_len = len(longest_word)
-print(longest_word)
-print(max_len)
+if __name__ == "__main__":
+    input()
+    string = input()
+    longest_word = get_longest_word(string)
+    max_len = len(longest_word)
+    print(longest_word)
+    print(max_len)
