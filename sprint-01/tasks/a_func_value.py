@@ -15,6 +15,7 @@ def calculate_func(a: int, b: int, c: int, x: int) -> int:
     return y
 
 
-a, x, b, c = map(int, input().split())
-y = calculate_func(a, b, c, x)
-print(y)
+if __name__ == "__main__":
+    a, x, b, c = map(int, input().split())
+    y = calculate_func(a, b, c, x)
+    print(y)
