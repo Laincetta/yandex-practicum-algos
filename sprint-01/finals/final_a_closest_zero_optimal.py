@@ -16,10 +16,9 @@
 Формат вывода
 Для каждого из участков выведите расстояние до ближайшего нуля. Числа выводите в одну строку, разделяя их пробелами.
 """
-from typing import List
 
 
-def get_distances(plots: List[int], n: int) -> List[int]:
+def get_distances(plots: list[int], n: int) -> list[int]:
     distances = [0] * n
 
     # ближайшее расстояние от нулей слева
@@ -40,8 +39,9 @@ def get_distances(plots: List[int], n: int) -> List[int]:
     return distances
 
 
-n = int(input())
-plots = list(map(int, input().split()))
-distances = get_distances(plots, n)
+if __name__ == "__main__":
+    n = int(input())
+    plots = list(map(int, input().split()))
+    distances = get_distances(plots, n)
 
-print(*distances)
+    print(*distances)
