@@ -20,34 +20,27 @@
 """
 
 
-from typing import List
+def get_max_points(field: list[list[str]], k: int) -> int:
+    MAX_PLAYERS = 2
+    max_presses = k * MAX_PLAYERS # общее число нажатий от двух игроков (если одинаковая производительность)
+    count_digits = [0] * 10
 
-
-def get_max_points(field: List[List[str]], k: int) -> int:
-    max_presses = k * 2
-    field_digits = []
-
+    # считаем количество каждой цифры
     for row in field:
         for char in row:
             if char != '.':
-                field_digits.append(int(char))  # убираем '.', оставляем цифры
+                count_digits[int(char)] += 1
 
-    field_digits.sort()
-    current_count = 0  # количество одинаковых цифр
     max_points = 0
-
-    for i in range(len(field_digits)):
-        current_count += 1
-        is_last = i == len(field_digits) - 1
-        if is_last or (field_digits[i] != field_digits[i + 1]):
-            if current_count <= max_presses:
-                max_points += 1
-            current_count = 0  # обнуляем когда переходим к другой цифре
+    for digit_count in count_digits[1:]: # проверяем все цифры кроме нуля, тк он не может встретиться
+        if 0 < digit_count <= max_presses:
+            max_points += 1
 
     return max_points
 
 
-FIELD_LEN = 4
-k = int(input())
-field = [list(input()) for _ in range(FIELD_LEN)]
-print(get_max_points(field, k))
+if __name__ == "__main__":
+    FIELD_LEN = 4
+    k = int(input())
+    field = [list(input()) for _ in range(FIELD_LEN)]
+    print(get_max_points(field, k))
