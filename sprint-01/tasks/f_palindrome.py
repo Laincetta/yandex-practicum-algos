@@ -25,5 +25,6 @@ def if_palindrome(string: str) -> bool:
     return chars == chars_reverse
 
 
-string = input()
-print(if_palindrome(string))
+if __name__ == "__main__":
+    string = input()
+    print(if_palindrome(string))
